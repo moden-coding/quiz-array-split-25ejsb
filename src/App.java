@@ -49,15 +49,26 @@ public class App {
     }
 
     public static int[] copyFrontAndBack(int[] nums){
-
-        return null; //this is a placeholder
-
+        if (nums.length < 0) {
+            return null;
+        } else if (nums.length == 1) {
+            return new int[]{nums[0], nums[0]};
+        } else {
+            return new int[]{nums[0], nums[nums.length-1]};
+        }
     }
 
     public static int maxWordLength(String sentence){
+        String[] splliter = sentence.split(" ");
+        int longestNum = 0;
 
+        for (String word: splliter) {
+            if (word.length() > longestNum) {
+                longestNum = word.length();
+            }
+        }
 
-        return -1; //this is a placeholder
+        return longestNum; //this is a placeholder
     }
 
 
